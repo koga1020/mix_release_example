@@ -68,8 +68,8 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Configure your database
 config :mix_release_example, MixReleaseExample.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "mix_release_example_dev",
+  username: "default",
+  password: "secret",
+  database: "default",
   hostname: "localhost",
   pool_size: 10
