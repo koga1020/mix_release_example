@@ -17,3 +17,12 @@ services:
       - POSTGRES_PASSWORD=secret
     networks:
       - backend
+  app:
+    build: 
+      dockerfile: ./dockerfiles/app/Dockerfile
+      context: .
+    command: "bin/mix_release_example start"
+    ports:
+      - "4000:4000"
+    networks:
+      - backend
