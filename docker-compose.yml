@@ -1,0 +1,19 @@
+version: '3'
+
+networks:
+  backend:
+    driver: bridge
+
+services:
+  db:
+    build: ./dockerfiles/db
+    volumes:
+      - ./volumes/db/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=default
+      - POSTGRES_USER=default
+      - POSTGRES_PASSWORD=secret
+    networks:
+      - backend
